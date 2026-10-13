@@ -1,0 +1,31 @@
+ANANYA MEHTA
+Senior Data Scientist
+Email: ananya.mehta@example.com | Phone: +91 90000 00001 | Location: Bengaluru, India
+
+SUMMARY
+Data scientist with 7 years of experience building and deploying machine learning models for credit risk and customer analytics. She has led a team of 4 analysts and puts her models into production on AWS.
+
+SKILLS
+Languages: Python, SQL
+Machine Learning: Machine Learning, Scikit-learn, XGBoost, TensorFlow, NLP
+Big Data and Cloud: Apache Spark, AWS (S3, SageMaker, EMR), Airflow, Docker
+Analytics: Statistics, A/B Testing, Pandas, Tableau
+
+EXPERIENCE
+Senior Data Scientist | FinEdge Analytics, Bengaluru | Jun 2021 - Present
+- Built credit-risk models using XGBoost and scikit-learn that cut the loan default rate by 12%.
+- Processed 200M+ row datasets with Apache Spark on AWS EMR.
+- Deployed models as REST services on AWS SageMaker using Docker and Airflow pipelines.
+- Mentored 4 junior analysts and presented results to senior leadership.
+
+Data Analyst | BrightCart, Pune | Jul 2019 - May 2021
+- Wrote complex SQL queries to analyze customer behavior for 2M users.
+- Built a churn prediction model in Python (scikit-learn), improving retention campaign targeting by 18%.
+- Designed Tableau dashboards used daily by the marketing team.
+
+EDUCATION
+M.Tech in Data Science | IIT Example, 2019
+B.Tech in Computer Science | State Technical University, 2017
+
+CERTIFICATIONS
+AWS Certified Machine Learning - Specialty (2022)

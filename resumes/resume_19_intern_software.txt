@@ -1,0 +1,17 @@
+ETHAN HUNT
+ethan.hunt@example.com | Los Angeles, CA
+
+SUMMARY
+Undergraduate Software Engineering Intern with coursework in computer science and basic Python programming.
+
+EXPERIENCE
+Software Engineering Intern | College Labs | Jun 2024 - Dec 2024
+- Assisted with writing unit tests in Python.
+- Built a simple internal dashboard using HTML and JavaScript.
+
+EDUCATION
+High School Diploma | Beverly Hills High | 2019 - 2023
+Currently enrolled in B.S. Computer Science | UCLA (Expected 2027)
+
+SKILLS
+Python, JavaScript, HTML5, Git

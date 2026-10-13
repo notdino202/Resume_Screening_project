@@ -1,0 +1,24 @@
+ISHA GUPTA
+Software Engineer and ML Consultant
+Email: isha.gupta@example.com | Phone: +91 90000 00017 | Location: Jaipur, India
+
+SUMMARY
+Software engineer with about 5 years of experience in backend development and freelance machine learning projects.
+
+SKILLS
+Python, JavaScript, React, SQL, Flask, Machine Learning, R, Go, Git
+
+EXPERIENCE
+Senior Developer | Nimbus Labs | 2024-09 to Present
+- Build Flask APIs and React dashboards for logistics clients.
+
+Machine Learning Consultant (Freelance) | Self-employed | Jan 2022 - Present
+- Built demand forecasting models in Python and R for two retail clients.
+- Wrote SQL pipelines to prepare training data.
+
+Software Engineer | CodeBridge Systems | 03/2021 - 08/2024
+- Developed REST services in Python and JavaScript.
+- Maintained PostgreSQL databases and wrote automated tests.
+
+EDUCATION
+B.Sc in Computer Science | Jaipur University, 2020

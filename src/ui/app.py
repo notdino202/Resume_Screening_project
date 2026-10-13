@@ -193,22 +193,100 @@ if "parsed_jd" in st.session_state:
 
 # Main Content Area: Resumes & Screening
 st.subheader("📂 2. Candidate Resumes")
-col_upload, col_sample = st.columns([3, 1])
 
-with col_upload:
+resume_source_mode = st.radio(
+    "Select Resume Source:",
+    ["📁 Local Folder", "📤 Drag & Drop Upload", "⭐ Benchmark Sample Resumes (10 Files)"],
+    horizontal=True,
+)
+
+candidates_to_process: list[tuple[str, bytes]] = []
+
+if resume_source_mode == "📁 Local Folder":
+    c_f1, c_f2 = st.columns([3, 1])
+    with c_f1:
+        # Check standard folder locations
+        default_folder_candidates = ["resumes", "data/sample_resumes", "data/resumes", "Custom Directory Path..."]
+        folder_choice = st.selectbox(
+            "Select Resume Folder:",
+            options=default_folder_candidates,
+            index=0,
+            help="Select the folder where your candidate resume files (.pdf, .docx, .txt) are stored."
+        )
+    with c_f2:
+        st.write("")
+        st.write("")
+        rescan_clicked = st.button("🔄 Refresh Folder", help="Re-scan directory for newly added resume files")
+
+    if folder_choice == "Custom Directory Path...":
+        custom_folder_path = st.text_input("Enter Full or Relative Folder Path:", value="resumes")
+        target_dir = Path(custom_folder_path.strip())
+    else:
+        target_dir = Path(folder_choice)
+
+    valid_exts = {".pdf", ".docx", ".txt"}
+    if target_dir.exists() and target_dir.is_dir():
+        # Case-insensitive extension scan, no restriction on filename prefix!
+        discovered_files = [f for f in target_dir.iterdir() if f.is_file() and f.suffix.lower() in valid_exts]
+        discovered_files.sort(key=lambda x: x.name.lower())
+
+        if discovered_files:
+            st.success(f"📁 Found **{len(discovered_files)}** candidate resume file(s) in `{target_dir}`")
+            file_names = [f.name for f in discovered_files]
+
+            # Allow user to select all or subset
+            select_all = st.checkbox("Select all resumes in folder", value=True)
+            if select_all:
+                selected_names = file_names
+            else:
+                selected_names = st.multiselect(
+                    "Choose specific resumes to screen:",
+                    options=file_names,
+                    default=file_names[:10] if len(file_names) > 10 else file_names
+                )
+
+            name_to_path = {f.name: f for f in discovered_files}
+            for sname in selected_names:
+                fpath = name_to_path[sname]
+                try:
+                    candidates_to_process.append((sname, fpath.read_bytes()))
+                except Exception as read_err:
+                    st.warning(f"Could not read {sname}: {read_err}")
+        else:
+            st.warning(f"⚠️ No `.pdf`, `.docx`, or `.txt` files found in `{target_dir}`. Please place candidate resumes in this directory.")
+    else:
+        st.error(f"Directory `{target_dir}` does not exist. Please check the folder path.")
+
+elif resume_source_mode == "📤 Drag & Drop Upload":
     uploaded_files = st.file_uploader(
         "Upload Resumes (PDF, DOCX, TXT)",
         type=["pdf", "docx", "txt"],
         accept_multiple_files=True
     )
+    if uploaded_files:
+        st.info(f"📤 {len(uploaded_files)} resumes ready for screening.")
+        for uf in uploaded_files:
+            candidates_to_process.append((uf.name, uf.getvalue()))
 
-with col_sample:
-    st.write("Or use preloaded samples:")
-    use_sample_resumes = st.button("📁 Load 10 Sample Resumes")
-
-if use_sample_resumes:
-    st.session_state["use_samples"] = True
-    st.success("Loaded 10 diverse sample candidate profiles.")
+else:  # Benchmark Sample Resumes
+    sample_files = [
+        "resume_01_ml_senior.pdf",
+        "resume_02_data_scientist.docx",
+        "resume_03_fullstack_dev.txt",
+        "resume_04_nlp_researcher.pdf",
+        "resume_05_devops_cloud.docx",
+        "resume_06_backend_python.pdf",
+        "resume_07_junior_qa.docx",
+        "resume_08_data_analyst.txt",
+        "resume_09_cloud_architect.pdf",
+        "resume_10_frontend_angular.docx",
+    ]
+    sample_dir = Path("data/sample_resumes") if Path("data/sample_resumes").exists() else Path("resumes")
+    for sf in sample_files:
+        spath = sample_dir / sf
+        if spath.exists():
+            candidates_to_process.append((sf, spath.read_bytes()))
+    st.info(f"⭐ Loaded {len(candidates_to_process)} benchmark evaluation resumes.")
 
 # Run Screening Button
 run_screen = st.button("🚀 Screen & Rank Candidates", type="primary", use_container_width=True)
@@ -216,22 +294,13 @@ run_screen = st.button("🚀 Screen & Rank Candidates", type="primary", use_cont
 if run_screen:
     if "parsed_jd" not in st.session_state:
         st.error("Please configure or parse a Job Description first.")
+    elif not candidates_to_process:
+        st.error("No resumes selected or found to screen. Please ensure your resumes folder contains .pdf, .docx, or .txt files, or upload files.")
     else:
         target_jd = st.session_state["parsed_jd"]
         if round(sum(target_jd.weights_override.values()), 2) != 1.0:
             st.error("Weights must sum to 1.0 before running.")
         else:
-            candidates_to_process = []
-
-            # Determine sources
-            if uploaded_files:
-                for uf in uploaded_files:
-                    candidates_to_process.append((uf.name, uf.getvalue()))
-            elif st.session_state.get("use_samples", False) or True:  # Default to sample resumes if none uploaded
-                sample_files = list(Path("data/sample_resumes").glob("resume_*.*"))
-                for sf in sample_files:
-                    candidates_to_process.append((sf.name, sf.read_bytes()))
-
             progress_bar = st.progress(0)
             status_text = st.empty()
             screened_results: list[CandidateScoreResult] = []
@@ -240,48 +309,70 @@ if run_screen:
             for idx, (fname, raw_bytes) in enumerate(candidates_to_process):
                 status_text.text(f"Extracting & evaluating {fname} ({idx+1}/{len(candidates_to_process)})...")
 
-                # Ingestion & cleaning
-                ext_res = pipe["extractor"].extract(raw_bytes, file_name=fname)
-                file_hashes[fname] = ext_res.file_hash
+                try:
+                    # Ingestion & cleaning
+                    ext_res = pipe["extractor"].extract(raw_bytes, file_name=fname)
+                    file_hashes[fname] = ext_res.file_hash
 
-                # Sections & Skills
-                sections = pipe["detector"].detect_sections(ext_res.clean_text)
-                skills = pipe["matcher"].extract_skills_from_sections(sections)
-                edu = pipe["edu_parser"].parse_education(sections.education_text or ext_res.clean_text)
-                exp = pipe["exp_parser"].parse_experience(sections.experience_text or ext_res.clean_text)
+                    # Sections & Skills
+                    sections = pipe["detector"].detect_sections(ext_res.clean_text)
+                    skills = pipe["matcher"].extract_skills_from_sections(sections)
+                    edu = pipe["edu_parser"].parse_education(sections.education_text or ext_res.clean_text)
+                    exp = pipe["exp_parser"].parse_experience(sections.experience_text or ext_res.clean_text)
 
-                # Cache in SQLite
-                pipe["db"].cache_parsed_resume(
-                    file_hash=ext_res.file_hash,
-                    file_name=fname,
-                    file_type=ext_res.file_type,
-                    clean_text=ext_res.clean_text,
-                    sections_dict={s.value: sections.get_text(s) for s in sections.section_texts},
-                    skills_dict={s: skills[s].evidence_factor for s in skills},
-                    education_dict={"level": edu.highest_level, "degree": edu.highest_degree_name},
-                    experience_dict={"total": exp.total_years, "relevant": exp.relevant_years},
-                    quality_flags=ext_res.advisory_flags,
-                )
+                    # Cache in SQLite
+                    pipe["db"].cache_parsed_resume(
+                        file_hash=ext_res.file_hash,
+                        file_name=fname,
+                        file_type=ext_res.file_type,
+                        clean_text=ext_res.clean_text,
+                        sections_dict={s.value: sections.get_text(s) for s in sections.section_texts},
+                        skills_dict={s: skills[s].evidence_factor for s in skills},
+                        education_dict={"level": edu.highest_level, "degree": edu.highest_degree_name},
+                        experience_dict={"total": exp.total_years, "relevant": exp.relevant_years},
+                        quality_flags=ext_res.advisory_flags,
+                    )
 
-                # Score
-                score_res = pipe["scorer"].score_candidate(
-                    candidate_id=fname.rsplit(".", 1)[0],
-                    file_name=fname,
-                    clean_text=ext_res.clean_text,
-                    extracted_skills=skills,
-                    candidate_edu=edu,
-                    candidate_exp=exp,
-                    jd=target_jd,
-                    extraction_flags=ext_res.advisory_flags,
-                )
-                score_res.explanation = ExplanationGenerator.generate_explanation(score_res)
-                screened_results.append(score_res)
+                    # Score
+                    score_res = pipe["scorer"].score_candidate(
+                        candidate_id=fname.rsplit(".", 1)[0],
+                        file_name=fname,
+                        clean_text=ext_res.clean_text,
+                        extracted_skills=skills,
+                        candidate_edu=edu,
+                        candidate_exp=exp,
+                        jd=target_jd,
+                        extraction_flags=ext_res.advisory_flags,
+                    )
+                    score_res.explanation = ExplanationGenerator.generate_explanation(score_res)
+                    screened_results.append(score_res)
+
+                except Exception as exc:
+                    # Gracefully flag corrupt or 0-byte resumes without breaking the entire run
+                    failed_flags = ["EXTRACTION_FAILED", "UNREADABLE_OR_EMPTY_FILE"]
+                    failed_res = CandidateScoreResult(
+                        candidate_id=fname.rsplit(".", 1)[0],
+                        file_name=fname,
+                        final_score=0.0,
+                        tier="Weak",
+                        advisory_flags=failed_flags,
+                        weights_used=target_jd.weights_override or {},
+                    )
+                    failed_res.explanation = (
+                        f"### Screening Assessment: {fname}\n"
+                        f"**Recommendation Tier:** `WEAK` | **Final Score:** `0.0 / 100`\n\n"
+                        f"> ⚠️ **Advisory Notice:** Parsing failed for this document: *{str(exc)}*. "
+                        f"This document could not be ingested. Please review the file manually."
+                    )
+                    screened_results.append(failed_res)
+
                 progress_bar.progress((idx + 1) / len(candidates_to_process))
 
             # Ranking with tie-breaking
             ranked = pipe["scorer"].rank_candidates(screened_results)
             for c in ranked:
-                c.explanation = ExplanationGenerator.generate_explanation(c)
+                if not any("EXTRACTION_FAILED" in f for f in c.advisory_flags):
+                    c.explanation = ExplanationGenerator.generate_explanation(c)
 
             # Save results to SQLite
             job_key = f"job_{abs(hash(target_jd.title))%100000}"

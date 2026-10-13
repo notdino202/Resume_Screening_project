@@ -30,7 +30,9 @@ class EmbeddingManager:
         if key in self._cache:
             return self._cache[key]
 
-        vec = self.model.encode(cleaned, normalize_embeddings=True, show_progress_bar=False)
+        import torch
+        with torch.inference_mode():
+            vec = self.model.encode(cleaned, normalize_embeddings=True, show_progress_bar=False)
         self._cache[key] = np.array(vec, dtype=np.float32)
         return self._cache[key]
 
@@ -53,12 +55,14 @@ class EmbeddingManager:
                 to_encode_texts.append(cleaned)
 
         if to_encode_texts:
-            encoded = self.model.encode(
-                to_encode_texts,
-                batch_size=32,
-                normalize_embeddings=True,
-                show_progress_bar=False,
-            )
+            import torch
+            with torch.inference_mode():
+                encoded = self.model.encode(
+                    to_encode_texts,
+                    batch_size=16,
+                    normalize_embeddings=True,
+                    show_progress_bar=False,
+                )
             for orig_idx, vec in zip(to_encode_indices, encoded):
                 key = self._hash_text(to_encode_texts[orig_idx if False else to_encode_indices.index(orig_idx)])
                 vec_arr = np.array(vec, dtype=np.float32)

@@ -1,0 +1,4 @@
+Vikram Singh
+vikram.singh@example.com, +91 90000 00007, Hyderabad, India
+
+I am a data engineer with over six years of experience building batch and streaming data pipelines. Since April 2020 I have worked at StreamLine Data as a Data Engineer, where I design ETL pipelines in Python and SQL using Apache Spark and Airflow on AWS (S3, Redshift, Glue). I also built a Kafka-based streaming ingestion layer that handles 50,000 events per second. I support the data science team by deploying their machine learning models to production, although I do not build the models myself. I hold a B.E. in Information Technology from Osmania University (2019). My tools include Python, SQL, Spark, Kafka, Airflow, Redshift, AWS, Docker and Git.

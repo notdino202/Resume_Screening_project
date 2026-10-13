@@ -1,0 +1,26 @@
+ROHAN DAS
+Machine Learning Graduate
+Email: rohan.das@example.com | Phone: +91 90000 00003 | Location: Kolkata, India
+
+SUMMARY
+Recent computer science graduate with a six-month machine learning internship and several end-to-end projects. Open to entry-level data science roles.
+
+SKILLS
+Python, SQL, Machine Learning, Scikit-learn, TensorFlow, Pandas, NLP, Git
+
+EXPERIENCE
+Machine Learning Intern | DataSpark Labs, Remote | Jan 2025 - Jun 2025
+- Trained a text classification model in Python and scikit-learn for support ticket routing.
+- Prepared training data using SQL and Pandas.
+- Reported model accuracy and error analysis to the team weekly.
+
+PROJECTS
+Customer Churn Prediction: Python, scikit-learn, XGBoost; reached 0.86 AUC on a public telecom dataset.
+Sentiment Analysis of Product Reviews: NLP with TensorFlow; fine-tuned a small text model.
+Sales Dashboard: SQL-backed dashboard for a college fest.
+
+EDUCATION
+B.Tech in Computer Science | NIT Example, 2025
+
+CERTIFICATIONS
+Machine Learning Specialization (online course), 2024

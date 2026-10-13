@@ -1,0 +1,17 @@
+Job Title: Senior DevOps Engineer
+Team: Cloud Platform & Infrastructure
+
+Role Overview:
+Help us scale our cloud infrastructure, automate deployment pipelines, and improve system reliability.
+
+Required Experience:
+- 5+ years of professional experience managing cloud infrastructure.
+- Bachelor's degree in Computer Engineering or related discipline.
+- Deep hands-on expertise with AWS, Docker, and Kubernetes.
+- Expertise with Infrastructure as Code using Terraform and Ansible.
+- Strong shell scripting skills in Bash and Python.
+- Proven CI/CD pipeline automation with GitLab CI or Jenkins.
+
+Bonus Points:
+- Experience with Helm, Prometheus, and Grafana monitoring stacks.
+- Knowledge of GCP and Azure multi-cloud architectures.

@@ -1,0 +1,16 @@
+Job Title: Senior Data Scientist
+Company: Retail Analytics Corp
+
+Overview:
+We seek an experienced Data Scientist to design predictive models and run experimentation across multi-million user datasets.
+
+Basic Qualifications:
+- 4+ years of relevant industry experience in data science and predictive analytics.
+- Bachelor of Science in Statistics, Mathematics, or Computer Science.
+- Advanced proficiency in Python, SQL, and Pandas.
+- Deep expertise in Scikit-learn, LightGBM, and A/B Testing methodologies.
+- Experience building dashboards in Tableau.
+
+Desired Skills:
+- Experience with AWS cloud infrastructure and Docker.
+- Familiarity with R and Streamlit for rapid prototyping.

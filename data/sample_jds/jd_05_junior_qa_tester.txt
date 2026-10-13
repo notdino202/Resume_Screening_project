@@ -1,0 +1,16 @@
+Job Title: QA Automation Tester
+Location: Chicago, IL
+
+Position Overview:
+We are looking for an enthusiastic QA Tester to automate our web test suites and maintain test coverage.
+
+Minimum Qualifications:
+- At least 1 year of experience in test automation or software QA.
+- Associate degree or Diploma in Information Technology or Computer Science.
+- Practical experience writing test scripts in Python and Selenium.
+- Familiarity with Pytest and API testing with Postman.
+- Experience with bug tracking tools like JIRA.
+
+Nice to Have:
+- Basic understanding of JavaScript and HTML5.
+- Familiarity with CI/CD concepts.

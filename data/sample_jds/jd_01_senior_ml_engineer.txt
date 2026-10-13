@@ -1,0 +1,19 @@
+Position: Senior Machine Learning Engineer
+Department: Artificial Intelligence & NLP
+Location: Remote / San Francisco, CA
+
+About the Role:
+We are looking for a Senior Machine Learning Engineer to lead the design and deployment of large language models and semantic retrieval systems.
+
+Minimum Qualifications:
+- 5+ years of experience building and deploying machine learning models in production environments.
+- Master's degree in Computer Science, Data Science, or related quantitative field.
+- Strong proficiency in Python, PyTorch, and Hugging Face Transformers.
+- Proven track record with Natural Language Processing (NLP), BERT, and Sentence-Transformers.
+- Hands-on experience containerizing models using Docker and orchestrating APIs with FastAPI.
+
+Preferred Qualifications:
+- Ph.D. in Computer Science with a focus on Deep Learning.
+- Experience with FAISS, vector databases, and RAG architectures.
+- Familiarity with AWS and Apache Airflow pipelines.
+- Knowledge of C++ and CUDA kernel optimization.

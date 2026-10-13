@@ -1,0 +1,16 @@
+Role: Lead Full Stack Engineer
+Location: Bengaluru / Hybrid
+
+Job Summary:
+Join our fast-growing SaaS platform building responsive web interfaces and distributed backend APIs.
+
+Requirements:
+- Minimum 4 years of professional experience in full stack software engineering.
+- Bachelor's degree in Computer Science, Information Technology, or equivalent.
+- Strong proficiency in JavaScript, TypeScript, React, and Node.js.
+- Strong experience designing REST APIs with FastAPI and Python.
+- Proven experience with PostgreSQL, Redis, and Docker.
+
+Nice to Have:
+- Experience with Next.js, Redux, and Tailwind CSS.
+- Familiarity with Kubernetes and CI/CD pipelines with GitHub Actions.

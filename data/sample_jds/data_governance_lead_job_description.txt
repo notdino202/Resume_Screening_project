@@ -1,0 +1,31 @@
+TITLE: Lead Data Governance Specialist
+DEPARTMENT: Enterprise Architecture & Information Management
+EMPLOYMENT TYPE: Full-Time / Hybrid
+LOCATION: Chicago, IL (2 days onsite / 3 days remote)
+
+ABOUT THE ROLE:
+We are seeking an experienced and strategic Lead Data Governance Specialist to champion the stewardship, compliance, and quality of our core enterprise data assets. In this role, you will bridge technical data teams and operational business units to define metadata standards, data classification policies, and compliance procedures across high-volume pipelines.
+
+KEY RESPONSIBILITIES:
+- Design, operationalize, and maintain the enterprise data governance framework, data dictionary, and metadata catalog.
+- Partner with compliance, legal, and security teams to enforce regulatory mandates (GDPR, CCPA/CPRA, and industry data retention standards).
+- Establish measurable Data Quality KPIs and automated anomaly detection dashboards across staging and production warehouses.
+- Lead monthly cross-functional Data Stewardship councils to resolve ownership ambiguities, schema conflict resolutions, and access approvals.
+- Run user enablement workshops to promote data literacy and self-serve governance practices across non-technical departments.
+
+REQUIRED QUALIFICATIONS:
+- 5+ years of experience in data governance, information architecture, or enterprise data management.
+- Strong proficiency with metadata catalogs and governance tooling (e.g., Collibra, Alation, Microsoft Purview, or Apache Atlas).
+- Working knowledge of relational databases, SQL queries, and modern cloud data stacks (Snowflake, BigQuery, or Databricks).
+- Demonstrated success establishing formal data policy frameworks within regulated environments (finance, healthcare, or insurance).
+
+PREFERRED QUALIFICATIONS:
+- Certified Data Management Professional (CDMP) or CIPP certification.
+- Familiarity with event-driven data streaming governance and API contracts.
+
+COMPENSATION & PERKS:
+- Base Salary Range: $135,000 – $160,000 USD
+- Annual performance bonus (15%)
+- Comprehensive medical, dental, and vision coverage
+- 401(k) matching up to 5% with immediate vesting
+- Annual professional development & certification budget ($2,500)

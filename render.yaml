@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: talentrank-resume-screener
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: Dockerfile
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PORT
+        value: 8501

@@ -1,0 +1,19 @@
+Data Scientist
+
+About the role
+We are hiring a Data Scientist to build predictive models that improve our customer retention and pricing decisions.
+
+Responsibilities
+- Build, validate and deploy machine learning models.
+- Analyze large datasets and communicate findings to business teams.
+- Work with engineers to put models into production.
+
+Requirements
+- 3+ years of experience in data science or analytics.
+- Bachelor's degree in Computer Science, Statistics or a related field.
+- Strong proficiency in Python and SQL.
+- Hands-on experience with machine learning.
+
+Preferred
+- Experience with Apache Spark.
+- Familiarity with AWS.

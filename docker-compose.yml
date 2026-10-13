@@ -1,0 +1,12 @@
+services:
+  talentrank:
+    build: .
+    container_name: talentrank-app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./resumes:/app/resumes
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

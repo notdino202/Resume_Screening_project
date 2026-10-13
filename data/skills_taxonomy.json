@@ -118,5 +118,18 @@
   "Postman": {"aliases": ["postman"], "category": "Testing/Tools"},
   "JIRA": {"aliases": ["jira"], "category": "Testing/Tools"},
   "Agile": {"aliases": ["agile", "scrum", "kanban"], "category": "Testing/Tools"},
-  "Unit Testing": {"aliases": ["unit testing", "test automation", "automated testing"], "category": "Testing/Tools"}
+  "Unit Testing": {"aliases": ["unit testing", "test automation", "automated testing"], "category": "Testing/Tools"},
+
+  "Streamlit": {"aliases": ["streamlit"], "category": "Data"},
+  "SQLAlchemy": {"aliases": ["sqlalchemy"], "category": "Backend"},
+  "CUDA": {"aliases": ["cuda"], "category": "ML/NLP"},
+  "DeepSpeed": {"aliases": ["deepspeed"], "category": "ML/NLP"},
+  "LoRA": {"aliases": ["lora", "low-rank adaptation"], "category": "ML/NLP"},
+  "Excel": {"aliases": ["excel", "ms excel", "microsoft excel", "vba", "powerquery"], "category": "Data"},
+  "Looker": {"aliases": ["looker"], "category": "Data"},
+  "NgRx": {"aliases": ["ngrx"], "category": "Frontend"},
+  "Storybook": {"aliases": ["storybook"], "category": "Frontend"},
+  "Statsmodels": {"aliases": ["statsmodels"], "category": "Data"},
+  "Jupyter": {"aliases": ["jupyter", "jupyter notebook"], "category": "Data"}
 }
+

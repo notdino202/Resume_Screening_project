@@ -9,3 +9,6 @@
 ## Known Failures and Edge Cases Logged
 - **OCR Engine:** Tesseract executable is not present on standard Windows path. System falls back gracefully to `pdfplumber` and `pymupdf`, flagging scanned-only PDFs with an advisory flag `OCR_ENGINE_UNAVAILABLE` or `LOW_QUALITY_EXTRACTION`.
 - **Date Parsing:** Ambiguous date formats (e.g. 05/06) will be normalized using explicit date patterns before dateparser. "Present", "Current", and open intervals capped at current timestamp.
+- **Education Regex Collision:** "High School Diploma" matched level 2 "Diploma" due to standard degree ordering. Resolved using fixed-width negative lookbehind `(?<!high school )diploma`.
+- **Experience Overlap Merging:** Sorted start-date intervals are merged into contiguous non-overlapping spans so concurrent/overlapping jobs (e.g. moonlight/consulting) calculate true elapsed career years rather than duplicate time.
+

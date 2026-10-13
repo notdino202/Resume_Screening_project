@@ -1,0 +1,20 @@
+LEO DUPONT
+leo.dupont@example.com | San Francisco, CA
+
+SUMMARY
+Senior Frontend Engineer with 6 years experience architecting large-scale React and Next.js web applications.
+
+EXPERIENCE
+Senior Frontend Developer | SaaS Flow | Jan 2021 - Present
+- Led frontend architecture migration to Next.js, React, TypeScript, and Redux Toolkit.
+- Built design system components using Tailwind CSS and Storybook.
+- Improved Core Web Vitals score by 45%.
+
+Frontend Developer | WebCraft | Jun 2018 - Dec 2020
+- Developed web interfaces using JavaScript, React, HTML5, CSS3, and REST API integrations.
+
+EDUCATION
+Bachelor of Science in Computer Science | San Jose State University | 2014 - 2018
+
+SKILLS
+React, Next.js, TypeScript, JavaScript, Redux, Tailwind CSS, HTML5, CSS3, Webpack, Git, JIRA

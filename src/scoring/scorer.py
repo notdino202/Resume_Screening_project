@@ -141,8 +141,10 @@ class HybridScorer:
         if has_missing_must and "missing must-have" not in flags:
             flags.append("missing must-have")
 
-        # 3. Semantic Component Scoring
-        sem_res = self.semantic_matcher.score_requirements(jd.requirements, clean_text)
+        # 3. Semantic Component Scoring (PII-scrubbed for fairness)
+        from src.preprocessing.pii_scrubber import PiiScrubber
+        scrubbed_text = PiiScrubber.scrub(clean_text)
+        sem_res = self.semantic_matcher.score_requirements(jd.requirements, scrubbed_text)
         semantic_score = sem_res.score
 
         # 4. Experience Component Scoring

@@ -1,0 +1,20 @@
+MIA ROBERTS
+mia.roberts@example.com | Denver, CO
+
+SUMMARY
+Junior Backend Software Developer with 2 years experience building REST APIs with Python, Django, and PostgreSQL.
+
+EXPERIENCE
+Backend Developer | Peak Web Services | Jan 2023 - Present
+- Developed REST API endpoints using Python, Django, and PostgreSQL.
+- Implemented background tasks using Celery and Redis.
+- Wrote unit tests using Pytest with 85% coverage.
+
+Junior Software Intern | CodeCraft | Jun 2022 - Dec 2022
+- Maintained database queries and API documentation with Postman.
+
+EDUCATION
+Bachelor of Science in Computer Science | University of Colorado | 2018 - 2022
+
+SKILLS
+Python, Django, FastAPI, PostgreSQL, Redis, Celery, REST API, Pytest, Docker, Git, Postman

@@ -1,0 +1,6 @@
+Variant / Model,Mean NDCG@10,Mean Precision@5
+TF-IDF only,0.9597,0.8
+Skills only,0.9834,0.88
+Semantic only,0.9438,0.76
+Skills + Semantic,0.9826,0.88
+Full Hybrid,0.983,0.88

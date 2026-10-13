@@ -1,0 +1,24 @@
+PRIYA PATEL
+Bengaluru, India | priya.patel@example.com
+
+SUMMARY
+Full Stack Developer with 5 years of experience building scalable web applications and REST APIs.
+
+EXPERIENCE
+Lead Full Stack Engineer | Apex Digital | Aug 2021 - Present
+- Spearheaded development of SaaS web platform using React, TypeScript, Next.js, and Node.js.
+- Designed backend microservices using Python, FastAPI, PostgreSQL, and Redis.
+- Implemented CI/CD pipelines with GitHub Actions and deployed containerized apps using Docker on Kubernetes.
+
+Full Stack Developer | InfoSys Dynamics | Jul 2019 - Jul 2021
+- Developed responsive web interfaces using JavaScript, React, Redux, and Tailwind CSS.
+- Built secure RESTful APIs using Express.js and MongoDB.
+- Optimized database queries, reducing query response times by 40%.
+
+EDUCATION
+Bachelor of Technology in Information Technology | NIT Trichy | 2015 - 2019
+
+SKILLS
+Frontend: React, TypeScript, JavaScript, HTML5, CSS3, Next.js, Redux
+Backend: Node.js, Express, Python, FastAPI, PostgreSQL, MongoDB, Redis
+DevOps & Cloud: Docker, Kubernetes, AWS, Git, CI/CD, Linux

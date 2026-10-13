@@ -1,0 +1,50 @@
+# Hybrid Resume Screening Configuration
+
+weights:
+  skill: 0.40
+  semantic: 0.30
+  experience: 0.20
+  education: 0.10
+
+skill_scoring:
+  must_have_weight: 0.75
+  nice_to_have_weight: 0.25
+  exact_match_score: 1.0
+  semantic_match_threshold: 0.75
+  semantic_match_cap: 0.80
+  missing_score: 0.0
+  evidence_weights:
+    experience_projects: 1.0
+    certifications: 0.9
+    skills_list: 0.7
+    other: 0.5
+
+semantic_scoring:
+  model_name: "all-MiniLM-L6-v2"
+  sim_low: 0.20
+  sim_high: 0.70
+  chunk_size_words: 60
+  chunk_overlap_words: 15
+
+experience_scoring:
+  relevant_weight: 0.70
+  total_weight: 0.30
+
+education_scoring:
+  gap_zero_or_positive: 1.0
+  gap_minus_one: 0.5
+  gap_below_minus_one: 0.0
+  degree_levels:
+    high_school: 1
+    diploma: 2
+    bachelor: 3
+    master: 4
+    doctorate: 5
+
+tiers:
+  strong: 75.0
+  moderate: 50.0
+
+extraction:
+  min_text_length: 100
+  low_quality_threshold: 0.60

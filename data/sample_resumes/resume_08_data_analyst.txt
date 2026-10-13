@@ -1,0 +1,22 @@
+LUCAS SILVA
+Miami, FL | lucas.silva@example.com
+
+PROFESSIONAL SUMMARY
+Data Analyst with 3 years of experience in business intelligence, SQL data modeling, and reporting.
+
+WORK EXPERIENCE
+Data Analyst | Global Retail Group | Jul 2021 - Present
+- Wrote complex SQL queries, stored procedures, and ETL scripts in Snowflake and BigQuery.
+- Built automated reporting dashboards in Power BI and Tableau.
+- Analyzed marketing funnel conversion rates using Python and pandas.
+
+Junior Business Analyst | Metro Logistics | Jun 2020 - Jun 2021
+- Maintained Excel models, financial tracking sheets, and weekly executive KPI reports.
+
+EDUCATION
+Bachelor of Business Administration in Information Systems | Florida International University | 2016 - 2020
+
+SKILLS
+Data Analysis: SQL, Python, Pandas, Excel (VBA, PowerQuery)
+BI Tools: Power BI, Tableau, Looker
+Databases: Snowflake, Google BigQuery, PostgreSQL

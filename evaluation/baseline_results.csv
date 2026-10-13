@@ -1,0 +1,11 @@
+Resume,TFIDF_Rank,TFIDF_Score,Skill_Rank,Skill_Score,Matched_Must_Skills
+resume_01_ml_senior.pdf,1,0.3248,1,0.9286,11
+resume_04_nlp_researcher.pdf,2,0.1578,2,0.7565,9
+resume_03_fullstack_dev.txt,7,0.0354,3,0.2403,3
+resume_06_backend_python.pdf,5,0.0402,4,0.2045,3
+resume_02_data_scientist.docx,3,0.0501,5,0.1721,2
+resume_05_devops_cloud.docx,6,0.0358,6,0.1721,2
+resume_09_cloud_architect.pdf,4,0.0403,7,0.1039,1
+resume_07_junior_qa.docx,9,0.0162,8,0.0682,1
+resume_08_data_analyst.txt,8,0.0274,9,0.0682,1
+resume_10_frontend_angular.docx,10,0.0118,10,0.0,0

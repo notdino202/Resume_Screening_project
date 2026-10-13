@@ -1,0 +1,11 @@
+Rank,Candidate File,Final Score,Tier,Skill (40%),Semantic (30%),Exp (20%),Edu (10%),Must Coverage,Flags
+#1,resume_01_ml_senior.pdf,86.4,Strong,91.4%,66.0%,100.0%,100.0%,100.0%,None
+#2,resume_04_nlp_researcher.pdf,67.5,Moderate,66.6%,36.1%,100.0%,100.0%,76.4%,missing must-have
+#3,resume_05_devops_cloud.docx,44.1,Weak,17.2%,40.8%,100.0%,50.0%,18.2%,"missing must-have, education below requirement"
+#4,resume_02_data_scientist.docx,44.0,Weak,17.2%,40.2%,100.0%,50.0%,18.2%,"missing must-have, education below requirement"
+#5,resume_09_cloud_architect.pdf,43.6,Weak,10.4%,31.6%,100.0%,100.0%,9.1%,missing must-have
+#6,resume_03_fullstack_dev.txt,42.4,Weak,22.9%,27.5%,100.0%,50.0%,27.3%,"missing must-have, education below requirement"
+#7,resume_06_backend_python.pdf,40.6,Weak,16.4%,30.1%,100.0%,50.0%,21.8%,"missing must-have, education below requirement"
+#8,resume_08_data_analyst.txt,35.4,Weak,6.8%,25.4%,100.0%,50.0%,9.1%,"missing must-have, education below requirement"
+#9,resume_10_frontend_angular.docx,32.6,Weak,0.0%,25.4%,100.0%,50.0%,0.0%,"missing must-have, education below requirement"
+#10,resume_07_junior_qa.docx,29.8,Weak,6.8%,26.8%,95.4%,0.0%,9.1%,"missing must-have, education below requirement"
